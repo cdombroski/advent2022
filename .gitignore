@@ -1,0 +1,44 @@
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+# .vscode/settings.json
+.vscode-test
+.lh
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+
+# Optional REPL history
+.node_repl_history
+
+# This and that
+.nrepl-port
+dist/
+
+# clojure-lsp
+.lsp
+output.calva-repl
+.clj-kondo/*
+!.clj-kondo/config.edn
+/clojure-lsp*
+
+# Calva dev
+clojure.tmLanguage.json
+.cpcache/
+backup/
