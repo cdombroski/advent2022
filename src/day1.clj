@@ -12,13 +12,13 @@
       elves)))
 
 (defn problem1 []
-  (with-open [input (io/reader "./day1/input.txt")]
+  (with-open [input (io/reader "./resource/day1.txt")]
     (let [elves (parse-input (line-seq input))]
       (reduce max (map #(reduce + %) elves)))))
     
 
 (defn problem2 []
-  (with-open [input (io/reader "./day1/input.txt")]
+  (with-open [input (io/reader "./resource/day1.txt")]
     (let [elves (parse-input (line-seq input))]
       (apply + (take 3 (reverse (sort (map #(reduce + %) elves))))))))
 
