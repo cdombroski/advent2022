@@ -2,15 +2,15 @@
   (:require [clojure.java.io :as io]
             [clojure.set :as set]))
 
-(defn parse-input [input]
-  (map #(map set (split-at (/ (count (seq %)) 2) (seq %))) (line-seq input)))
-
 (defn problem1 []
   (with-open [input (io/reader "resource/day3.txt")]
     (->> input
-         parse-input
+         line-seq
+         (map seq)
+         (map #(split-at (/ (count %) 2) %))
+         (map #(map set %))
          (map #(apply set/intersection %))
-         (map #(reduce identity %))
+         (map first)
          (map int)
          (map #(if (>= % 97)
                  (- % 96)
@@ -25,7 +25,7 @@
          (map set)
          (partition 3)
          (map #(apply set/intersection %))
-         (map #(reduce identity %))
+         (map first)
          (map int)
          (map #(if (>= % 97)
                  (- % 96)
